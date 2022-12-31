@@ -5,20 +5,20 @@ using System.Threading.Tasks;
 
 namespace eTickets.Controllers
 {
-    public class CinemasController : Controller
+    public class MoviesController : Controller
     {
         private readonly AppDBContext _context;
 
-        public CinemasController(AppDBContext context)
+        public MoviesController(AppDBContext context)
         {
             _context = context;
         }
 
         public async Task<IActionResult> Index()
         {
-            var allCinemas = await _context.Cinemas.ToListAsync();
-
-            return View(allCinemas);
+            var allMovies = await _context.Movies.ToListAsync();
+            
+            return View(allMovies);
         }
     }
 }
